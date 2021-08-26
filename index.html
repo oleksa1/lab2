@@ -2,7 +2,7 @@
 <html>
 
 <head>
-	<title>Weather Map</title>
+	<title>Weathermap</title>
         <style type="text/css">
         html, body, #demoMap {
             width: 100%;
@@ -15,7 +15,6 @@
 	<script>
 		let map;
         const weatherAPI = "1b5ee5a1a74d624a74750350327ea372"
-
 		function handleAPI( data ){
 			console.log( data )
             var fromProjection = new OpenLayers.Projection("EPSG:4326");   // Transform from WGS 1984
@@ -41,25 +40,25 @@
             map.setCenter(position, zoom);
 			const image = "https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png";
 
-			["Kharkiv", 
+			["Vinnytsia", 
+			"Cherkasy", 
+			"Kharkiv", 
 			"Kherson", 
 			"Khmelnytskyi",
-			"Vinnytsia", 
-			"Cherkasy", 
-			"Chernivtsi", 
+			"Chernivtsi",  
+			"Kirovohrad", 
 			"Dnipropetrovsk", 
 			"Donetsk", 
-			"Ivano-Frankivsk", 
-			"Kirovohrad", 
+			"Ivano-Frankivsk",
 			"Luhansk", 
 			"Mykolaiv", 
 			"Poltava", 
 			"Rivne", 
 			"Sumy", 
-			"Ternopil", 
-			"Lutsk", 
-			"Uzhhorod", 
+			"Lutsk",
+			"Ternopil",  
 			"Zaporizhia", 
+			"Uzhhorod",
 			"Zhytomyr"].forEach(city => {
 				$.get( `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${weatherAPI}`, handleAPI )
 			});
